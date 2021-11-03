@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Date;
 import java.util.Objects;
 
-public class Order {
+public class OrderDTO {
     @JsonProperty("id")
     private Integer id;
     @JsonProperty
@@ -15,9 +15,9 @@ public class Order {
     @JsonProperty("orderTotal")
     private Integer orderTotal;
     @JsonProperty("address")
-    private Address address;
+    private AddressDTO address;
     @JsonProperty("client")
-    private Client client;
+    private ClientDTO client;
 
     public Integer getId() {
         return id;
@@ -51,19 +51,19 @@ public class Order {
         this.orderTotal = orderTotal;
     }
 
-    public Address getAddress() {
+    public AddressDTO getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(AddressDTO address) {
         this.address = address;
     }
 
-    public Client getClient() {
+    public ClientDTO getClient() {
         return client;
     }
 
-    public void setClient(Client client) {
+    public void setClient(ClientDTO client) {
         this.client = client;
     }
 
@@ -71,7 +71,7 @@ public class Order {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Order order = (Order) o;
+        OrderDTO order = (OrderDTO) o;
         return Objects.equals(id, order.id) && Objects.equals(orderTime, order.orderTime) && Objects.equals(numberOfPilotes, order.numberOfPilotes) && Objects.equals(orderTotal, order.orderTotal) && Objects.equals(address, order.address) && Objects.equals(client, order.client);
     }
 

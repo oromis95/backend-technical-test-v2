@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-public class Client {
+public class ClientDTO {
     @JsonProperty("firstName")
     private String firstName;
     @JsonProperty("lastName")
@@ -40,7 +40,7 @@ public class Client {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Client client = (Client) o;
+        ClientDTO client = (ClientDTO) o;
         return Objects.equals(firstName, client.firstName) && Objects.equals(lastName, client.lastName) && Objects.equals(telephone, client.telephone);
     }
 

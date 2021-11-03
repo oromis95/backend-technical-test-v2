@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Date;
 
 @Table
 @Entity(name = "ORDER")
@@ -12,13 +13,13 @@ public class Order implements Serializable {
     @Id
     @Column(name = "ID")
     private Integer id;
-    @Column(name = "NUMBER")
-    private String number;
+    @Column(name = "NUMBER_PILOTES")
+    private int numberPilotes;
     @OneToOne
     @JoinColumn(name = "DELIVERY_ADDRESS")
     private Address deliveryAddress;
-    @Column(name = "PILOTES")
-    private int pilotes;
+    @Column(name = "ORDER_TIME")
+    private Date orderTime;
     @Column(name = "ORDERTOTAL")
     private double orderTotal;
 
@@ -30,12 +31,12 @@ public class Order implements Serializable {
         this.id = id;
     }
 
-    public String getNumber() {
-        return number;
+    public int getNumberPilotes() {
+        return numberPilotes;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setNumberPilotes(int numberPilotes) {
+        this.numberPilotes = numberPilotes;
     }
 
     public Address getDeliveryAddress() {
@@ -46,12 +47,12 @@ public class Order implements Serializable {
         this.deliveryAddress = deliveryAddress;
     }
 
-    public int getPilotes() {
-        return pilotes;
+    public Date getOrderTime() {
+        return orderTime;
     }
 
-    public void setPilotes(int pilotes) {
-        this.pilotes = pilotes;
+    public void setOrderTime(Date orderTime) {
+        this.orderTime = orderTime;
     }
 
     public double getOrderTotal() {
