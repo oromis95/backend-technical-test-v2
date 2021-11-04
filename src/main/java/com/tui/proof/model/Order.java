@@ -20,8 +20,9 @@ public class Order implements Serializable {
     private Address deliveryAddress;
     @Column(name = "ORDER_TIME")
     private Date orderTime;
-    @Column(name = "ORDERTOTAL")
-    private double orderTotal;
+    @OneToOne
+    @JoinColumn(name = "USER_OWN")
+    private Client userOwn;
 
     public Integer getId() {
         return id;
@@ -55,11 +56,11 @@ public class Order implements Serializable {
         this.orderTime = orderTime;
     }
 
-    public double getOrderTotal() {
-        return orderTotal;
+    public Client getUserOwn() {
+        return userOwn;
     }
 
-    public void setOrderTotal(double orderTotal) {
-        this.orderTotal = orderTotal;
+    public void setUserOwn(Client userOwn) {
+        this.userOwn = userOwn;
     }
 }
